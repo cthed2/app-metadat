@@ -18,7 +18,7 @@ export const useForm = (validate: any) => {
     event.preventDefault();
     setErrors(validate(values));
     // Your url for API
-    const url = "https://script.google.com/macros/s/AKfycbxnPkRutCmhH9UKraehHS_5By3bxhXYYl6TnD9GVaAzm1B_U8WEitD_JqVXoclIzjhq/exec";
+    const url = "http://35.231.219.199:5001/data";
     if (Object.keys(values).length === 3) {
       axios
         .post(url, {
@@ -29,6 +29,7 @@ export const useForm = (validate: any) => {
         });
     }
   };
+
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && shouldSubmit) {
